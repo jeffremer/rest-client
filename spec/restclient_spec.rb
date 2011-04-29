@@ -16,6 +16,11 @@ describe RestClient do
       RestClient::Request.should_receive(:execute).with(:method => :put, :url => 'http://some/resource', :payload => 'payload', :headers => {})
       RestClient.put('http://some/resource', 'payload')
     end
+    
+    it "PATCH" do
+      RestClient::Request.should_receive(:execute).with(:method => :patch, :url => 'http://some/resource', :payload => 'payload', :headers => {})
+      RestClient.patch('http://some/resource', 'payload')
+    end
 
     it "DELETE" do
       RestClient::Request.should_receive(:execute).with(:method => :delete, :url => 'http://some/resource', :headers => {})

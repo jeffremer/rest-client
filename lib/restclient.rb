@@ -71,6 +71,10 @@ module RestClient
   def self.post(url, payload, headers={}, &block)
     Request.execute(:method => :post, :url => url, :payload => payload, :headers => headers, &block)
   end
+  
+  def self.patch(url, payload, headers={}, &block)
+    Request.execute(:method => :patch, :url => url, :payload => payload, :headers => headers, &block)
+  end  
 
   def self.put(url, payload, headers={}, &block)
     Request.execute(:method => :put, :url => url, :payload => payload, :headers => headers, &block)
